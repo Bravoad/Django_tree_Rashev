@@ -7,6 +7,15 @@
                     {% for child in item.children %}
                         <li class="{% if child.active %}active{% endif %}">
                             <a href="{{ child.url }}">{{ child.name }}</a>
+                            {% if child.children %}
+                                <ul>
+                                    {% for grandchild in child.children %}
+                                        <li class="{% if grandchild.active %}active{% endif %}">
+                                            <a href="{{ grandchild.url }}">{{ grandchild.name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
