@@ -11,6 +11,7 @@ def draw_menu(context, menu_name):
     full_menu = get_full_menu(menu_items, current_url)
     return {'menu_items': full_menu}
 
+
 def get_full_menu(menu_items, current_url):
     full_menu = []
     for item in menu_items:
